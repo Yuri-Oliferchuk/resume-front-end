@@ -4,6 +4,16 @@
     margin: 0;
   }
 
+::-webkit-scrollbar {
+  width: 0px;
+  background: rgba(255, 255, 255, 0.0);
+}
+  
 html {
   background: #eeeeee;
+}
+
+button {
+  padding: 2px 15px;
+  cursor: pointer;
 }

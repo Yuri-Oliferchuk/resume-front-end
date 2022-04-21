@@ -1,11 +1,13 @@
-import './Info.css';
+import style from './Info.module.css';
 
 function Info(props) {
   return (
-    <div className={props.className}>
-      <div className='photo'>photo</div>
-      <div className='contacts'>contacts</div>
-      <div className='text'>text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text</div>
+    <div className={style.info}>
+      <div className={style.photo} >
+        <img src={props.user.photoUrl} alt='I am'/>
+      </div>
+      <div className={style.contacts}>contacts</div>
+      <div className={style.text}>text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text</div>
     </div>
   );
 }

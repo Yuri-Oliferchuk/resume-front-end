@@ -1,14 +1,14 @@
 import './App.css';
 import Footer from './components/footer/footer';
-import Header from './components/header/header';
-import Info from './components/info/Info';
+import HeaderContainer from './components/header/headerContainer';
+import InfoContainer from './components/info/InfoContainer';
 
 function App() {
   return (
     <div className='main'>
-      <Header className='header' />
-      <Info className='info' />
-      <Footer className='footer' />
+      <HeaderContainer />
+      <InfoContainer />
+      <Footer />
     </div>
   );
 }

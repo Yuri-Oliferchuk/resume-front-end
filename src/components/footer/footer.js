@@ -1,9 +1,8 @@
-import './footer.css';
+import style from './footer.module.css';
 
 function Footer(props) {
     return (
-        <div className={props.className}>
-
+        <div className={style.footer}>
         </div>
     );
 }
