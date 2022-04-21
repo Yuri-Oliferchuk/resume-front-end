@@ -3,9 +3,11 @@ import thunkMiddelware from "redux-thunk";
 import { reducer as formReducer } from 'redux-form';
 import configReducer from "./config-reducer";
 import infoReducer from "./info-reducer";
+import appReducer from "./app-reducer";
 
 
 let reducers = combineReducers({
+    app: appReducer,
     config: configReducer,
     info: infoReducer,
 

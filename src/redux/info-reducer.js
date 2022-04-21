@@ -28,7 +28,7 @@ const infoReducer = (state = initialState, action) => {
 export const getUserInfoSuccess = (data) => ({type: GET_USER_INFO, data})
 
 // create thunk creator
-export const getUserData = (lang) => async (dispatch) => {
+export const getUserData = (lang = 'eng') => async (dispatch) => {
     const response = await infoAPI.getInfo(lang);
     const { name, profession, text, contacts, photoUrl } = response.data;
     const dataObject = {name, profession, text, contacts, photoUrl};
