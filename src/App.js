@@ -1,12 +1,14 @@
 import './App.css';
+import Footer from './components/footer/footer';
+import Header from './components/header/header';
+import Info from './components/info/Info';
 
 function App() {
   return (
     <div className='main'>
-      <div className='header'>header</div>
-      <div className='left'>left</div>
-      <div className='text'>text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text <br /> text</div>
-      <div className='footer'>footer</div>
+      <Header className='header' />
+      <Info className='info' />
+      <Footer className='footer' />
     </div>
   );
 }

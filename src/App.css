@@ -1,27 +1,19 @@
-@media only screen and (min-width: 980px) {
+@media only screen and (min-width: 910px) {
     .main {
         display: grid;
         justify-content: center;
         height: 100vh;
-        grid-template-areas: "head head"
-                             "left text"
-                             "footer footer";
-        grid-template-rows: 50px auto 50px;
-        grid-template-columns: 20em 40em;
+        grid-template-areas: "head"
+                             "info"
+                             "footer";
+        grid-template-rows: 45px auto 50px;
+        grid-template-columns: 800px;
         margin-left: auto;
         margin-right: auto;
     }
     .header {
         border-top: 1px solid rgb(85, 85, 85);
         border-left: 1px solid rgb(85, 85, 85);
-        border-right: 1px solid rgb(85, 85, 85);
-    }
-    
-    .left {
-        border-left: 1px solid rgb(85, 85, 85);
-    }
-    
-    .text {
         border-right: 1px solid rgb(85, 85, 85);
     }
     
@@ -32,33 +24,21 @@
     }
 }
 
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 910px) {
     .main {
         display: grid;
         justify-content: center;
-        /* min-width: 300px; */
         height: 100vh;
         grid-template-areas: "head"
-                             "text"
-                             "left"
+                             "info"
                              "footer";
-        grid-template-rows: 40px auto auto 40px;
-        grid-template-columns: 95%;
+        grid-template-rows: 40px auto 40px;
+        grid-template-columns: 95vw ;
         margin-left: auto;
         margin-right: auto;
     }
     .header {
         border-top: 1px solid rgb(85, 85, 85);
-        border-left: 1px solid rgb(85, 85, 85);
-        border-right: 1px solid rgb(85, 85, 85);
-    }
-    
-    .left {
-        border-left: 1px solid rgb(85, 85, 85);
-        border-right: 1px solid rgb(85, 85, 85);
-    }
-    
-    .text {
         border-left: 1px solid rgb(85, 85, 85);
         border-right: 1px solid rgb(85, 85, 85);
     }
@@ -78,16 +58,9 @@
     padding: 5px;
 }
 
-.left {
-    grid-area: left;
-    background-color: lightgrey;
-    padding: 5px;
-}
-
-.text {
-    grid-area: text;
+.info {
+    grid-area: info;
     background-color: #eeeeee;
-    padding: 5px;
 }
 
 .footer {
