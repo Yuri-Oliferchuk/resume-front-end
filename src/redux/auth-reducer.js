@@ -59,7 +59,7 @@ export const login = (data) => async (dispatch) => {
     const response = await authAPI.login(data);
     if (response.data.statusCode === 0) {
         dispatch(userIsAuthorized(response.data.user));
-        dispatch(jwtTokenSet(response.data.token))
+        dispatch(jwtTokenSet(response.data.token));
         cookies.set('MYSID', response.data.token, { path: '/', maxAge: 60*60 });
     } else {
         const message = response.data.message.length > 0 
@@ -69,10 +69,22 @@ export const login = (data) => async (dispatch) => {
     }
 }
 
+export const signup = (data) => async (dispatch) => {
+    const response = await authAPI.signup(data);
+    if (response.data.statusCode === 0) {
+        dispatch(login(response.data.user))
+    } else {
+        const message = response.data.message.length > 0 
+                            ? response.data.message
+                            : "Some error"
+        dispatch(stopSubmit("signup", {_error: message}))
+    }
+}
+
 export const logout = (data) => async (dispatch) => {
     const response = await authAPI.logout();
     if (response.data.statusCode === 0) {
-        dispatch(userlogout())
+        dispatch(userlogout());
         cookies.remove('MYSID');
     }
 }

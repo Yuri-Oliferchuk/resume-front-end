@@ -34,6 +34,14 @@ export const authAPI = {
         }
     },
     
+    async signup(data) {
+        try {const response = await userInstance.post('auth/signup', data);
+            return response;}
+        catch(e) {
+            return e.response
+        }
+    },
+    
     async logout() {    
         const response = await userInstance.get('auth/logout');
         return response;

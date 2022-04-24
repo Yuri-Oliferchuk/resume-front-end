@@ -33,7 +33,7 @@ const infoReducer = (state = initialState, action) => {
 export const getUserInfoSuccess = (data) => ({type: GET_USER_INFO, data})
 
 // create thunk creator
-export const getUserData = (lang = (cookies.get('_lang') || 'eng'), token = undefined) => async (dispatch) => {
+export const getUserData = (lang = (sessionStorage.getItem('_lang') || 'eng'), token = undefined) => async (dispatch) => {
     dispatch(loadingToggle(true))
 
     const tokenFromCookie = cookies.get('MYSID');

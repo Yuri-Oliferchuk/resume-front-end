@@ -1,0 +1,32 @@
+.loginForm {
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(35,35,35);
+    border-radius: 5px;
+    margin: auto;
+}
+
+.loginForm h1 {
+    margin: 25px 0px 10px 0px
+}
+
+.loginForm button {
+    margin: 30px;
+}
+
+.globalError {
+    display: flex;
+    flex-direction: column;
+    color: red; 
+}
+
+.globalError button {
+    margin-top: 0px;
+}
+
+.globalErrorMessage {
+    margin-top: 10px;
+}

@@ -13,4 +13,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {})(InfoContainer);
+export default connect(mapStateToProps, {  })(InfoContainer);

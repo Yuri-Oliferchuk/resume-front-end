@@ -1,13 +1,9 @@
-import Cookies from 'universal-cookie';
-
-const cookies = new Cookies();
-
 const CHANGE_PROJECT_LANGUAGE = 'config/CHANGE_PROJECT_LANGUAGE';
 const LOADING_IN_PROGRES = 'config/LOADING_IN_PROGRES';
 
 //initial state
 let initialState = {
-    lang: cookies.get('_lang') || "ENG",
+    lang: sessionStorage.getItem('_lang') || "ENG",
     isLoading: false,
 }
 
@@ -15,7 +11,7 @@ let initialState = {
 const configReducer = (state = initialState, action) => {
     switch(action.type) {
         case CHANGE_PROJECT_LANGUAGE:
-            cookies.set('_lang', action.lang, { path: '/', maxAge: 60*60 });
+            sessionStorage.setItem("_lang", action.lang);
             return {
                 ...state,
                 lang: action.lang,

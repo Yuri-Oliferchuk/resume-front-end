@@ -3,8 +3,8 @@
     position: sticky;
          top:0;
     display: grid;
-    grid-template-areas: "langMenu mainMenu";
-    grid-template-columns: 50% 50%;
+    grid-template-areas: "langMenu edit mainMenu";
+    grid-template-columns: 1fr 1fr 1fr;
     background-color: grey;
     padding: 5px;
     border-top: 1px solid rgb(85, 85, 85);
@@ -14,15 +14,25 @@
 
 .langMenu {
     grid-area: langMenu;
+    flex-direction: row;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin-left: 10px;
 }
 
+.edit {
+    grid-area: edit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 .mainMenu {
     grid-area: mainMenu;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: flex-end;
 }
@@ -31,4 +41,8 @@ a {
     cursor: pointer;
     color: white;
     text-decoration: none;
+}
+
+.userName {
+    margin-right: 10px;
 }

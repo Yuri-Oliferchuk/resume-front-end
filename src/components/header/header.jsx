@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom';
 import style from './header.module.css';
 
 function Header(props) {
@@ -10,24 +9,25 @@ function Header(props) {
 
     const onLogout = () => {
         props.logout();
-    }
+        props.router.navigate('/');
+    } 
     
-    const onCheck = () => {
-        props.checkAuthorization(props.token);
-    }
-
     return (
         <div className={style.header}>
             <div className={style.langMenu}>
                 <button onClick={onLanguageChange}>{props.lang}</button>
             </div>
+            <div className={style.edit} >
+                
+            </div>
             <div className={style.mainMenu}>
-                { !props.isAuth &&
-                <NavLink to='/login'>Login</NavLink>
-                }
+                { !props.isAuth && <>
+                <button onClick={() => {props.router.navigate('/login')}}>Log in</button>
+                <button onClick={() => {props.router.navigate('/signup')}}>Sign up</button>
+                </>}
                 { props.isAuth && <>
+                <div className={style.userName}>{props.userName}</div>
                 <button onClick={onLogout}>Logout</button>
-                <button onClick={onCheck}>Check</button>
                 </>}
             </div>
         </div>
