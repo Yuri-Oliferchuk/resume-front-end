@@ -4,12 +4,14 @@ import { reducer as formReducer } from 'redux-form';
 import configReducer from "./config-reducer";
 import infoReducer from "./info-reducer";
 import appReducer from "./app-reducer";
+import authReducer from "./auth-reducer";
 
 
 let reducers = combineReducers({
     app: appReducer,
     config: configReducer,
     info: infoReducer,
+    auth: authReducer,
 
     form: formReducer,
 });

@@ -1,0 +1,8 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid rgb(85, 85, 85);
+    border-right: 1px solid rgb(85, 85, 85);
+    justify-content: center;
+    align-items: center;
+}

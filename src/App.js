@@ -4,8 +4,9 @@ import './App.css';
 import Preloader from './common/preloader/Preloader';
 import Footer from './components/footer/footer';
 import HeaderContainer from './components/header/headerContainer';
-import InfoContainer from './components/info/InfoContainer';
+import Main from './components/main/Main';
 import { initializeApp } from './redux/app-reducer';
+import { loadingToggle } from './redux/config-reducer';
 
 // class App extends React.Component {
 
@@ -34,14 +35,14 @@ const App = (props) => {
     }
   })
 
-  if (!props.initialized) {
+  if (!props.initialized || props.isLoading) {
     return <Preloader />
   }
 
   return (
-    <div className='main'>
+    <div className='app'>
       <HeaderContainer />
-      <InfoContainer />
+      <Main />
       <Footer />
     </div>
   );
@@ -50,7 +51,8 @@ const App = (props) => {
 const mapStateToProps = (state) => {
   return {
     initialized: state.app.initialized,
+    isLoading: state.config.isLoading,
   }
 }
 
-export default connect(mapStateToProps, {initializeApp})(App);
+export default connect(mapStateToProps, {initializeApp, loadingToggle})(App);

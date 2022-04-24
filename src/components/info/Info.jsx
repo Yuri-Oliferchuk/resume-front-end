@@ -4,7 +4,7 @@ import MainText from './mainText/MainText';
 
 function Info(props) {
   return (
-    <div className={style.info}>
+    <div className={style.info} >
       <div className={style.photo} >
         <img src={props.user.photoUrl} alt='I am'/>
       </div>
