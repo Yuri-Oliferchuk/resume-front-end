@@ -12,10 +12,6 @@ const SignUpForm = (props) => {
                 {createField( "username", "Username", Input, [requiredField, signupLength20] )}
                 {createField( "email", "Email", Input, [requiredField, isEmail] )}
                 {createField( "password", "Password", Input, [requiredField, signupLength20], {type: "password"} )}
-            {/* <div>
-                <label>Remember me:</label>
-                {createField( "rememberMe", "", Input, [], {type: "checkbox", className: style.checkBoxContainer} )}
-            </div> */}
             {props.error &&
                 <div className={style.globalError}>
                     <div className={style.globalErrorMessage}>{props.error}</div>

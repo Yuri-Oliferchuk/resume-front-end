@@ -1,3 +1,4 @@
+import EditModeButton from './editModeButton/EditModeButton';
 import style from './header.module.css';
 
 function Header(props) {
@@ -18,7 +19,10 @@ function Header(props) {
                 <button onClick={onLanguageChange}>{props.lang}</button>
             </div>
             <div className={style.edit} >
-                
+                <EditModeButton isEditMode={props.isEditMode}
+                                router={props.router}
+                                editModeToggle={props.editModeToggle}
+                                isAuth={props.isAuth} />
             </div>
             <div className={style.mainMenu}>
                 { !props.isAuth && <>
