@@ -2,6 +2,7 @@ import { infoAPI } from "../api/api";
 import { checkAuthorization, jwtTokenSet } from "./auth-reducer";
 import { loadingToggle } from "./config-reducer";
 import Cookies from 'universal-cookie';
+import { stopSubmit } from "redux-form";
 
 const cookies = new Cookies();
 
@@ -47,6 +48,18 @@ export const getUserData = (lang = (sessionStorage.getItem('_lang') || 'eng'), t
     dispatch(getUserInfoSuccess(dataObject));
 
     dispatch(loadingToggle(false))
+}
+
+export const postUserData = (data) => async (dispatch) => {
+    const response = await infoAPI.postInfo(data);
+    if (response.data.statusCode === 0) {
+        const { name, profession, text, contacts, photoUrl } = response.data.data;
+        const dataObject = {name, profession, text, contacts, photoUrl};
+        dispatch(getUserInfoSuccess(dataObject));
+        dispatch(stopSubmit("edit", {_error: response.data.message}))
+    } else {
+        // dispatch(stopSubmit("edit", {_error: response.data.message}))
+    }
 }
 
 export default infoReducer;

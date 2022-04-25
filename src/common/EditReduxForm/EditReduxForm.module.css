@@ -1,0 +1,34 @@
+.editForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.editForm input {
+    width: 64em;
+}
+
+.editForm textarea {
+    width: 64em;
+}
+
+
+.editForm button {
+    margin: 30px;
+}
+
+.globalError {
+    display: flex;
+    flex-direction: column;
+    color: red; 
+}
+
+.globalError button {
+    margin-top: 0px;
+}
+
+.globalErrorMessage {
+    margin-top: 10px;
+}

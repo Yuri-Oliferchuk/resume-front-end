@@ -17,7 +17,12 @@ export const infoAPI = {
     async getInfo(lang) {
         const response = await userInstance.get(`${lang}/info`);
         return response;
-    }
+    },
+
+    async postInfo(data) {
+        const response = await userInstance.post(`${data.lang}/info`, data);
+        return response;
+    },
 }
 
 export const authAPI = {
