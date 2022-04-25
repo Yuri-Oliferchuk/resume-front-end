@@ -9,7 +9,7 @@ export const Textarea = ({input, meta, ...props}) => {
             <label>{props.labletext}</label>
             { hasError && <span>{  meta.error }</span> }
             <div>
-                <textarea {...input} {...props} />   
+                <textarea {...input} {...props}  />   
             </div>
         </div>
     )

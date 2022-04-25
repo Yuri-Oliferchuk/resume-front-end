@@ -1,6 +1,7 @@
 const CHANGE_PROJECT_LANGUAGE = 'config/CHANGE_PROJECT_LANGUAGE';
 const LOADING_IN_PROGRES = 'config/LOADING_IN_PROGRES';
 const EDIT_MODE_TOGGLE = 'config/EDIT_MODE_TOGGLE';
+// const SET_ADMIN_RULES = 'config/SET_ADMIN_RULES';
 
 const editModeValue = () => {
     if (sessionStorage.getItem('_isEditMode') === "true") {
@@ -13,6 +14,7 @@ const editModeValue = () => {
 let initialState = {
     lang: sessionStorage.getItem('_lang') || "ENG",
     isEditMode: editModeValue(),
+    // isAdmin: false,
     isLoading: false,
 }
 
@@ -32,6 +34,13 @@ const configReducer = (state = initialState, action) => {
                 ...state,
                 isEditMode: action.value
             }
+            
+        // case SET_ADMIN_RULES:
+        //     sessionStorage.setItem("_isAdmin", action.value);
+        //     return {
+        //         ...state,
+        //         isAdmin: action.value
+        //     }
 
         case LOADING_IN_PROGRES:
             return {
@@ -47,14 +56,6 @@ const configReducer = (state = initialState, action) => {
 export const projectLanguageChanging = (lang) => ({type: CHANGE_PROJECT_LANGUAGE, lang})
 export const loadingToggle = (value) => ({type: LOADING_IN_PROGRES, value})
 export const editModeToggle = (value) => ({type: EDIT_MODE_TOGGLE, value})
-
-//create thunk creator
-// export const setAuthorisation = () => async (dispatch) => {
-//     const response = await authAPI.setAuth();
-//     if (response.data.resultCode === 0) {
-//         let { id, login, email } = response.data.data;
-//         dispatch(setAuthUserData(id, email, login, true));
-//     }
-// }
+// export const adminRulesToggle = (value) => ({type: SET_ADMIN_RULES, value})
 
 export default configReducer;

@@ -32,3 +32,13 @@
 .globalErrorMessage {
     margin-top: 10px;
 }
+
+.notAdmin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}

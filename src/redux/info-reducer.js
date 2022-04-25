@@ -58,7 +58,7 @@ export const postUserData = (data) => async (dispatch) => {
         dispatch(getUserInfoSuccess(dataObject));
         dispatch(stopSubmit("edit", {_error: response.data.message}))
     } else {
-        // dispatch(stopSubmit("edit", {_error: response.data.message}))
+        dispatch(stopSubmit("edit", {_error: response.data.message}))
     }
 }
 

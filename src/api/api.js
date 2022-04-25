@@ -20,8 +20,12 @@ export const infoAPI = {
     },
 
     async postInfo(data) {
-        const response = await userInstance.post(`${data.lang}/info`, data);
-        return response;
+        const {token} = data;
+        try {const response = await userInstance.post(`${data.lang}/info`, data, {headers: {Authorization: token}});
+            return response;}
+        catch(e) {
+            return e.response
+        }
     },
 }
 
