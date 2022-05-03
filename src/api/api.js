@@ -1,4 +1,7 @@
 import axios from "axios";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 axios.defaults.withCredentials = true;
 
@@ -20,7 +23,8 @@ export const infoAPI = {
     },
 
     async postInfo(data) {
-        const {token} = data;
+        // const {token} = data;
+        const token = cookies.get("MYACC");     
         try {const response = await userInstance.post(`${data.lang}/info`, data, {headers: {Authorization: token}});
             return response;}
         catch(e) {
@@ -31,7 +35,12 @@ export const infoAPI = {
 
 export const authAPI = {
     async checkAuthorisation(token) {
-        const response = await userInstance.get('auth/me', {headers: {Authorization: token}});
+        const response = await userInstance.get('auth/me/jwt', {headers: {Authorization: 'Bearer ' + token}});
+        return response;
+    },
+
+    async getNewToken(refreshToken) {
+        const response = await userInstance.post('/auth/refresh-tokens', {refreshToken: 'Bearer ' + refreshToken});
         return response;
     },
     

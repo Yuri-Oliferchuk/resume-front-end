@@ -29,7 +29,7 @@ const mapStateToProps = (state) => {
         user: state.info.user,
         lang: state.config.lang, 
         superuser: state.auth.user.superuser, 
-        token: state.auth.token,
+        // token: state.auth.token,
     }
 }
 
